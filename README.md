@@ -29,7 +29,10 @@ PORT=3000
 ```
 
 ### 3. Expose your local server to Slack with ngrok
-
+Run bolt app: 
+```sh
+node bolt-app.js
+```
 Start ngrok on your port (default 3000):
 ```sh
 ngrok http 3000
@@ -56,7 +59,7 @@ node bolt-app.js
 ![Sample Pikachu](imgs/search-screenshot.png) 
 ![Sample Pikachu](imgs/add-screenshot.png)
 
-- `/jerry search pikachuu`  
+- Suggested name if misspelled 
   → Suggests "Did you mean pikachu?" with a button to confirm.
   ![Sample Pikachu](imgs/suggestion-screenshot.png)
 - `/jerry deck`  

@@ -107,7 +107,7 @@ backend.post('/pokemon', apiKeyAuth, express.json(), (req, res) => {
   res.json({ message: `Pokémon '${name}' added.`, list: PokemonList });
 });
 
-// 2. Set up your Bolt app (no ExpressReceiver)
+// 2. Set up your Bolt app
 const boltApp = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
@@ -174,7 +174,7 @@ boltApp.command('/jerry', async ({ command, ack, respond, body, client }) => {
       if (deck.length === 0) {
         await respond('Your deck is empty.');
       } else {
-        // Fetch images for each Pokémon in the deck
+        // Fetch images for each Pokemon in the deck
         const deckWithImages = await Promise.all(deck.map(async (name) => {
           try {
             const pokeRes = await axios.get(`http://localhost:${process.env.PORT || 3000}/pokemon?name=${encodeURIComponent(name)}`,
@@ -277,7 +277,7 @@ boltApp.action('suggested_pokemon_no', async ({ ack, respond }) => {
   await respond({ text: 'No Pokémon selected.' });
 });
 
-// 4. Mount Bolt's requestListener for Slack events/commands (NO body parser here!)
+//  Mount Bolt's requestListener for Slack events/commands
 backend.post('/slack/events', async (req, res, next) => {
   await boltApp.receiver.requestListener(req, res, next);
 });
