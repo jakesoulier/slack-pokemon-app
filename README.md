@@ -25,7 +25,6 @@ Create a `.env` file in the root directory with:
 SLACK_BOT_TOKEN=your-slack-bot-token
 SLACK_SIGNING_SECRET=your-slack-signing-secret
 MY_API_KEY=your-api-key
-PORT=3000
 ```
 
 ### 3. Expose your local server to Slack with ngrok
