@@ -18,7 +18,7 @@ A Slack app built with @slack/bolt and Express that lets users search for pokemo
 Install dependencies:
   ```sh
   npm install @slack/bolt express axios dotenv didyoumean2
-
+```
 ### 2. Set up your `.env` file
 Create a `.env` file in the root directory with:
 ```sh
